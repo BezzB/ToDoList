@@ -35,10 +35,12 @@ class Item {
     removeButton.addEventListener('click', () => this.remove(itemBox));
   }
 
+  // eslint-disable-next-line class-methods-use-this
   edit(input) {
     input.disabled = !input.disabled;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   remove(itemBox) {
     container.removeChild(itemBox);
   }
