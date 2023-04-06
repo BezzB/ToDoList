@@ -31,6 +31,7 @@ class Item {
     this.createDiv(itemName, index);
   }
 
+  // eslint-disable-next-line no-unused-vars
   createDiv(itemName, index) {
     const input = document.createElement('input');
     input.value = itemName;
