@@ -39,6 +39,7 @@ h1 {
   margin: 0.25rem;
   border-radius: 25px;   
 }
+
 .addButton{
   height: 50px;
   width: 50px;
@@ -80,6 +81,7 @@ h1 {
   font-size: 1.4rem;
 }
 
+
 .editButton, 
 .removeButton{
     font-size: 1.4rem;
@@ -95,4 +97,22 @@ h1 {
 .removeButton:hover{
     color: cornflowerblue;
     font-size: 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .input_div {
+    flex-direction: column;
+  }
+  
+  .input_div .input {
+    width: 80%;
+  }
+  
+  .addButton {
+    width: 80%;
+  }
+  
+  .item_input{
+    width: 80%;
+  }
 }
