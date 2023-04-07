@@ -8,8 +8,8 @@ const itemList = [];
 class Item {
   constructor(itemName) {
     this.itemName = itemName;
-    this.completed = false;
     this.createDiv(itemName);
+    itemList.push(this.itemName);
     this.saveItems();
   }
 
@@ -35,27 +35,13 @@ class Item {
     removeButton.classList.add('removeButton');
     itemBox.appendChild(removeButton);
 
-    const updateButton = document.createElement('button');
-    updateButton.textContent = 'Update';
-    updateButton.classList.add('updateButton');
-    itemBox.appendChild(updateButton);
-
     editButton.addEventListener('click', () => this.edit(input));
     removeButton.addEventListener('click', () => this.remove(itemBox));
-    updateButton.addEventListener('click', () => this.update(input, itemName));
-  }
-
-  update(input, itemName) {
-    this.itemName = input.value;
-    itemList.splice(itemList.indexOf(itemName), 1, this.itemName);
-    this.saveItems();
-    input.disabled = true;
   }
 
   // eslint-disable-next-line class-methods-use-this
   edit(input) {
-    input.disabled = false;
-    input.focus();
+    input.disabled = !input.disabled;
   }
 
   remove(itemBox) {
@@ -84,8 +70,8 @@ if (localStorage.getItem('itemList')) {
 
 addButton.addEventListener('click', () => {
   if (inputValue.value !== '') {
-    const newItem = new Item(inputValue.value);
-    itemList.push(newItem.itemName);
+    // eslint-disable-next-line no-new
+    new Item(inputValue.value);
     inputValue.value = '';
   }
 });
