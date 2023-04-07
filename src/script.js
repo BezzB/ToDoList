@@ -1,12 +1,17 @@
 import './style.css';
 
+
 const addButton = document.querySelector('.addButton');
 const inputValue = document.querySelector('.input');
 const container = document.querySelector('.container');
+const itemList = [];
 
 class Item {
   constructor(itemName) {
+    this.itemName = itemName;
     this.createDiv(itemName);
+    itemList.push(this.itemName);
+    this.saveItems();
   }
 
   createDiv(itemName) {
@@ -40,10 +45,28 @@ class Item {
     input.disabled = !input.disabled;
   }
 
-  // eslint-disable-next-line class-methods-use-this
   remove(itemBox) {
     container.removeChild(itemBox);
+    const index = itemList.indexOf(this.itemName);
+    if (index > -1) {
+      itemList.splice(index, 1);
+      this.saveItems();
+    }
   }
+
+  // eslint-disable-next-line class-methods-use-this
+  saveItems() {
+    localStorage.setItem('itemList', JSON.stringify(itemList));
+  }
+}
+
+// Check if items are stored in local storage
+if (localStorage.getItem('itemList')) {
+  const storedItems = JSON.parse(localStorage.getItem('itemList'));
+  storedItems.forEach((item) => {
+    // eslint-disable-next-line no-new
+    new Item(item);
+  });
 }
 
 addButton.addEventListener('click', () => {
