@@ -85,6 +85,19 @@ h1 {
   border: none;
   cursor: pointer;
 }
+/* Style for the Update button */
+.updateButton {
+  background-color: #f8b500;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 10px;
+  cursor: pointer;
+}
 
 .editButton:hover,
 .removeButton:hover {
