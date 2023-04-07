@@ -1,6 +1,5 @@
 import './style.css';
 
-
 const addButton = document.querySelector('.addButton');
 const inputValue = document.querySelector('.input');
 const container = document.querySelector('.container');
