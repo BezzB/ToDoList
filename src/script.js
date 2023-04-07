@@ -8,6 +8,7 @@ const itemList = [];
 class Item {
   constructor(itemName) {
     this.itemName = itemName;
+    this.completed = false;
     this.createDiv(itemName);
     itemList.push(this.itemName);
     this.saveItems();
