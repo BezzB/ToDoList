@@ -70,8 +70,10 @@ if (localStorage.getItem('itemList')) {
 
 addButton.addEventListener('click', () => {
   if (inputValue.value !== '') {
-    // eslint-disable-next-line no-new
-    new Item(inputValue.value);
+    const newItem = new Item(inputValue.value);
+    itemList.push(newItem);
+    /* eslint-disable no-console */
+    console.log(`The updated length of itemList is ${itemList.length}`);
     inputValue.value = '';
   }
 });
