@@ -10,7 +10,6 @@ class Item {
     this.itemName = itemName;
     this.completed = false;
     this.createDiv(itemName);
-    itemList.push(this.itemName);
     this.saveItems();
   }
 
@@ -86,9 +85,7 @@ if (localStorage.getItem('itemList')) {
 addButton.addEventListener('click', () => {
   if (inputValue.value !== '') {
     const newItem = new Item(inputValue.value);
-    itemList.push(newItem);
-    /* eslint-disable no-console */
-    console.log(`The updated length of itemList is ${itemList.length}`);
+    itemList.push(newItem.itemName);
     inputValue.value = '';
   }
 });
