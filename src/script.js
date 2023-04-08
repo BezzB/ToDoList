@@ -93,8 +93,8 @@ clearButton.addEventListener('click', () => {
   itemList = itemList.filter((item) => !item.completed);
   container.innerHTML = '';
   itemList.forEach((item) => {
-    // eslint-disable-next-line no-new
-    new Item(item.itemName, item.completed);
+    item.updateStatus(item.completed); // update the completed status
+    item.createDiv(item.itemName, item.completed); // update the appearance
   });
   localStorage.setItem('itemList', JSON.stringify(itemList));
 });
