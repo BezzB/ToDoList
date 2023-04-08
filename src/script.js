@@ -1,20 +1,21 @@
-import getStatusUpdates from './statusUpdates.js';
 import './style.css';
 
 const addButton = document.querySelector('.addButton');
 const inputValue = document.querySelector('.input');
 const container = document.querySelector('.container');
-const itemList = [];
+const clearButton = document.querySelector('.clearButton');
+let itemList = [];
 
 class Item {
-  constructor(itemName) {
+  constructor(itemName, completed = false) {
     this.itemName = itemName;
-    this.createDiv(itemName);
-    itemList.push(this.itemName);
+    this.completed = completed;
+    this.createDiv(itemName, completed);
+    itemList.push(this);
     this.saveItems();
   }
 
-  createDiv(itemName) {
+  createDiv(itemName, completed) {
     const input = document.createElement('input');
     input.value = itemName;
     input.disabled = true;
@@ -36,8 +37,15 @@ class Item {
     removeButton.classList.add('removeButton');
     itemBox.appendChild(removeButton);
 
+    const checkBox = document.createElement('input');
+    checkBox.type = 'checkbox';
+    checkBox.checked = completed;
+    checkBox.classList.add('item_checkBox');
+    itemBox.appendChild(checkBox);
+
     editButton.addEventListener('click', () => this.edit(input));
     removeButton.addEventListener('click', () => this.remove(itemBox));
+    checkBox.addEventListener('change', () => this.updateStatus(checkBox.checked));
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -47,11 +55,16 @@ class Item {
 
   remove(itemBox) {
     container.removeChild(itemBox);
-    const index = itemList.indexOf(this.itemName);
+    const index = itemList.indexOf(this);
     if (index > -1) {
       itemList.splice(index, 1);
       this.saveItems();
     }
+  }
+
+  updateStatus(completed) {
+    this.completed = completed;
+    this.saveItems();
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -60,12 +73,11 @@ class Item {
   }
 }
 
-// Check if items are stored in local storage
 if (localStorage.getItem('itemList')) {
   const storedItems = JSON.parse(localStorage.getItem('itemList'));
   storedItems.forEach((item) => {
     // eslint-disable-next-line no-new
-    new Item(item);
+    new Item(item.itemName, item.completed);
   });
 }
 
@@ -77,5 +89,12 @@ addButton.addEventListener('click', () => {
   }
 });
 
-const statusUpdates = getStatusUpdates();
-console.log(statusUpdates); // Output: [{id: 1, text: "Completed", completed: true}, {id: 2, text: "Not Completed", completed: false}]
+clearButton.addEventListener('click', () => {
+  itemList = itemList.filter((item) => !item.completed);
+  container.innerHTML = '';
+  itemList.forEach((item) => {
+    // eslint-disable-next-line no-new
+    new Item(item.itemName, item.completed);
+  });
+  localStorage.setItem('itemList', JSON.stringify(itemList));
+});
