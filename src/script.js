@@ -1,3 +1,4 @@
+import getStatusUpdates from './statusUpdates.js';
 import './style.css';
 
 const addButton = document.querySelector('.addButton');
@@ -75,3 +76,6 @@ addButton.addEventListener('click', () => {
     inputValue.value = '';
   }
 });
+
+const statusUpdates = getStatusUpdates();
+console.log(statusUpdates); // Output: [{id: 1, text: "Completed", completed: true}, {id: 2, text: "Not Completed", completed: false}]
