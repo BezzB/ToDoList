@@ -10,45 +10,56 @@ class Item {
   constructor(itemName, completed = false) {
     this.itemName = itemName;
     this.completed = completed;
-    this.createDiv(itemName, completed);
+    this.createDiv();
     itemList.push(this);
     this.saveItems();
   }
 
-  createDiv(itemName, completed) {
-    const input = document.createElement('input');
-    input.value = itemName;
-    input.disabled = true;
-    input.classList.add('item_input');
-    input.type = 'text';
-
+  createDiv() {
     const itemBox = document.createElement('div');
     itemBox.classList.add('item');
     container.appendChild(itemBox);
+
+    const input = this.createInput();
     itemBox.appendChild(input);
 
-    const editButton = document.createElement('button');
-    editButton.textContent = 'Edit';
-    editButton.classList.add('editButton');
+    const editButton = this.createButton('Edit', 'editButton', () => this.edit(input));
     itemBox.appendChild(editButton);
 
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'Delete';
-    removeButton.classList.add('removeButton');
+    const removeButton = this.createButton('Delete', 'removeButton', () => this.remove(itemBox));
     itemBox.appendChild(removeButton);
 
-    const checkBox = document.createElement('input');
-    checkBox.type = 'checkbox';
-    checkBox.checked = completed;
-    checkBox.classList.add('item_checkBox');
+    const checkBox = this.createCheckbox();
     itemBox.appendChild(checkBox);
 
-    editButton.addEventListener('click', () => this.edit(input));
-    removeButton.addEventListener('click', () => this.remove(itemBox));
     checkBox.addEventListener('change', () => this.updateStatus(checkBox.checked));
   }
 
-  // eslint-disable-next-line class-methods-use-this
+  createInput() {
+    const input = document.createElement('input');
+    input.value = this.itemName;
+    input.disabled = true;
+    input.classList.add('item_input');
+    input.type = 'text';
+    return input;
+  }
+
+  createButton(text, className, onClick) {
+    const button = document.createElement('button');
+    button.textContent = text;
+    button.classList.add(className);
+    button.addEventListener('click', onClick);
+    return button;
+  }
+
+  createCheckbox() {
+    const checkBox = document.createElement('input');
+    checkBox.type = 'checkbox';
+    checkBox.checked = this.completed;
+    checkBox.classList.add('item_checkBox');
+    return checkBox;
+  }
+
   edit(input) {
     input.disabled = !input.disabled;
   }
@@ -67,7 +78,6 @@ class Item {
     this.saveItems();
   }
 
-  // eslint-disable-next-line class-methods-use-this
   saveItems() {
     localStorage.setItem('itemList', JSON.stringify(itemList));
   }
@@ -75,15 +85,11 @@ class Item {
 
 if (localStorage.getItem('itemList')) {
   const storedItems = JSON.parse(localStorage.getItem('itemList'));
-  storedItems.forEach((item) => {
-    // eslint-disable-next-line no-new
-    new Item(item.itemName, item.completed);
-  });
+  storedItems.forEach((item) => new Item(item.itemName, item.completed));
 }
 
 addButton.addEventListener('click', () => {
   if (inputValue.value !== '') {
-    // eslint-disable-next-line no-new
     new Item(inputValue.value);
     inputValue.value = '';
   }
@@ -93,8 +99,8 @@ clearButton.addEventListener('click', () => {
   itemList = itemList.filter((item) => !item.completed);
   container.innerHTML = '';
   itemList.forEach((item) => {
-    item.updateStatus(item.completed); // update the completed status
-    item.createDiv(item.itemName, item.completed); // update the appearance
+    item.updateStatus(item.completed);
+    item.createDiv();
   });
   localStorage.setItem('itemList', JSON.stringify(itemList));
 });
