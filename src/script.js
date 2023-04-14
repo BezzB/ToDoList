@@ -44,6 +44,7 @@ class Item {
     return input;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   createButton(text, className, onClick) {
     const button = document.createElement('button');
     button.textContent = text;
@@ -60,6 +61,7 @@ class Item {
     return checkBox;
   }
 
+  // eslint-disable-next-line class-methods-use-this
   edit(input) {
     input.disabled = !input.disabled;
   }
@@ -78,6 +80,7 @@ class Item {
     this.saveItems();
   }
 
+  // eslint-disable-next-line class-methods-use-this
   saveItems() {
     localStorage.setItem('itemList', JSON.stringify(itemList));
   }
@@ -90,6 +93,7 @@ if (localStorage.getItem('itemList')) {
 
 addButton.addEventListener('click', () => {
   if (inputValue.value !== '') {
+    // eslint-disable-next-line no-new
     new Item(inputValue.value);
     inputValue.value = '';
   }
