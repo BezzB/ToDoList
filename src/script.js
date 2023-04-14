@@ -108,3 +108,7 @@ clearButton.addEventListener('click', () => {
   });
   localStorage.setItem('itemList', JSON.stringify(itemList));
 });
+
+module.exports = {
+  Item,
+};
