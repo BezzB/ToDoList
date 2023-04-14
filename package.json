@@ -2,7 +2,7 @@
   "name": "setup-webpack-boiler-plate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "removeItems.js",
   "scripts": {
     "test": "jest --coverage",
     "deploy": "gh-pages -d dist",
@@ -44,6 +44,7 @@
     "stylelint-scss": "^3.21.0"
   },
   "jest": {
+    "testEnvironment": "jsdom",
     "transform": {
       "^.+\\.js$": "babel-jest"
     }
