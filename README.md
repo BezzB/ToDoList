@@ -11,27 +11,18 @@
 
 - [To Do List](#to-do-list)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[Awesome Book with ES6 \] ](#-awesome-book-with-es6--)
+- [📖 \[To Do List \] ](#-to-do-list--)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
-  - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites](#prerequisites)
-  - [Recommendation](#recommendation)
   - [👥 Authors ](#-authors-)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
 
-# 📖 [Awesome Book with ES6 ] <a name="about-project"></a>
+# 📖 [To Do List ] <a name="about-project"></a>
 
-> Hello , This is a simple project on making a To Do List.
-
-**[Awesome Book with ES6 ]** is a simple build up demo project.
+**[To DO List]** is a simple build up demo project.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -76,24 +67,6 @@
 
 <!-- GETTING STARTED -->
 
-## 💻 Getting Started <a name="getting-started"></a>
-
-
-To get a local copy up and running, follow these steps.
-
-
-### Prerequisites
-
-In order to run this project you need: 
-
-## Recommendation
-1. A good Computer
-2. A good knowledge about CSS & HTML
-
-* cd Hello_Microverse
-* git clone https://github.com/BezzB/hello-world-microverse-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
@@ -109,45 +82,6 @@ In order to run this project you need:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-## 🔭 Future Features <a name="future-features"></a>
-
-
-- [ ] **[Flexable colors]**
-- [ ] **[Nav Bars]**
-- [ ] **[Footer]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## 🤝 Contributing <a name="contributing"></a>
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- SUPPORT -->
-
-## ⭐️ Show your support <a name="support"></a>
-
-> Write a message to encourage readers to support your project
-
-If you like this please comment on it.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank you my patner Mario and Abass for the help.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
