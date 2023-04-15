@@ -11,16 +11,16 @@
 
 - [To Do List](#to-do-list)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[To Dd List \] ](#-to-dd-list--)
+- [📖 \[To Do List \] ](#-to-do-list--)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
   - [👥 Authors ](#-authors-)
-  - [� License ](#-license-)
+  - [📝 License ](#-license-)
 
 
-# 📖 [To Dd List ] <a name="about-project"></a>
+# 📖 [To Do List ] <a name="about-project"></a>
 
 > Hello , This is a simple project on making a To Do List.
 
