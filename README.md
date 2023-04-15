@@ -17,8 +17,7 @@
     - [Key Features ](#key-features-)
   - [🚀 Live Demo ](#-live-demo-)
   - [👥 Authors ](#-authors-)
-  - [🔭 Future Features ](#-future-features-)
-  - [📝 License ](#-license-)
+  - [� License ](#-license-)
 
 
 # 📖 [To Dd List ] <a name="about-project"></a>
@@ -85,15 +84,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-## 🔭 Future Features <a name="future-features"></a>
-
-
-- [ ] **[Flexable colors]**
-- [ ] **[Nav Bars]**
-- [ ] **[Footer]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
