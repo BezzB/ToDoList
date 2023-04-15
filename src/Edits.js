@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+// eslint-disable-next-line import/no-cycle
 import { display } from './AddTask.js';
 
 export const checkTaskDone = (e) => {
@@ -57,7 +59,7 @@ export const saveEdit = (item) => {
   localStorage.setItem('toDoList', JSON.stringify(tasks));
 };
 
-export const clearTasks = (e) => {
+export const clearTasks = (_e) => {
   const lists = localStorage.getItem('toDoList');
   const get = JSON.parse(lists);
   let tasks = [];

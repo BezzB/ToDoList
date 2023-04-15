@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line import/no-cycle
 import { checkTaskDone, editItem, saveEdit } from './Edits.js';
