@@ -11,7 +11,7 @@
 
 - [To Do List](#to-do-list)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[To Do List \] ](#-to-do-list--)
+- [📖 \[To Do List 2\] ](#-to-do-list-2-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -20,7 +20,7 @@
   - [📝 License ](#-license-)
 
 
-# 📖 [To Do List ] <a name="about-project"></a>
+# 📖 [To Do List 2] <a name="about-project"></a>
 
 **[To DO List]** is a simple build up demo project.
 
