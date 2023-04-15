@@ -20,6 +20,8 @@
     },
     "ignorePatterns": [
       "dist/",
-      "build/"
+      "build/",
+      "coverage/lcov-report/base.css",
+      "coverage/lcov-report/prettify.css"
     ]
   }
