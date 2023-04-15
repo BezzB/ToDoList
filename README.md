@@ -45,6 +45,10 @@
   <summary>Webpack modules</summary>
 </details>
 
+<details>
+  <summary>Testing with Jest</summary>
+</details>
+
 
 <!-- Features -->
 
