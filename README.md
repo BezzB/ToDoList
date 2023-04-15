@@ -22,8 +22,6 @@
 
 # 📖 [To Do List ] <a name="about-project"></a>
 
-> Hello , This is a simple project on making a To Do List.
-
 **[To DO List]** is a simple build up demo project.
 
 ## 🛠 Built With <a name="built-with"></a>
